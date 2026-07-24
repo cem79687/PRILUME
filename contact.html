@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Prilume | Démarrons votre projet web</title>
+<meta name="description" content="Contactez Prilume pour votre projet web. Création de site vitrine, refonte, UX/UI design. Premier échange gratuit et sans engagement. Basé à Beauvais.">
+<link rel="icon" type="image/png" href="img/prilume_logo1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="paper-texture"></div>
+
+<header class="site-header">
+  <a href="index.html" class="brand">PRIL<span>U</span>ME</a>
+  <nav class="links">
+    <a href="index.html#accueil">Accueil</a>
+    <a href="index.html#projets">Projets</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html" class="on">Contact</a>
+  </nav>
+  <a href="contact.html" class="cta-tag">Discutons →</a>
+</header>
+
+<div class="wrap">
+
+  <div class="page-intro">
+    <div class="index-tag">
+      <span class="num">05</span>
+      <span class="rule"></span>
+      <span>CONTACT</span>
+    </div>
+    <h1>Prêt à donner vie<br/>à votre <em>vision</em> ?</h1>
+    <p>Que ce soit pour une création complète ou une refonte stratégique, je suis là pour vous accompagner du brief à la mise en ligne.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-details">
+        <div class="item">
+          <span class="label">Email</span>
+          <p><a href="mailto:hello@prilume.fr">hello@prilume.fr</a></p>
+        </div>
+        <div class="item">
+          <span class="label">Localisation</span>
+          <p>Beauvais, France</p>
+        </div>
+        <div class="item">
+          <span class="label">Délai de réponse</span>
+          <p>Sous 24h en jours ouvrés</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h4>Quel est le délai pour créer un site web ?</h4>
+          <p>En général, un site vitrine est livré en 2 à 4 semaines selon la complexité du projet, après validation des maquettes.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Quel budget prévoir pour un site vitrine ?</h4>
+          <p>Un site vitrine sur-mesure démarre généralement à partir de 1 000 €. Le budget varie selon le nombre de pages, les fonctionnalités et le niveau de design souhaité.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Travaillez-vous à distance ?</h4>
+          <p>Oui, je travaille à distance pour des clients partout en France. Les échanges se font par email, visio et outils de collaboration en ligne.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-container">
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Comment vous appelez-vous ? <span class="req">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Jean Dupont" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Votre adresse email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jean@exemple.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="project">Quel est votre projet ? <span class="req">*</span></label>
+          <select id="project" name="project" required>
+            <option value="" disabled selected>Sélectionnez une prestation…</option>
+            <option value="vitrine">Création de site vitrine</option>
+            <option value="refonte">Refonte de site existant</option>
+            <option value="uxui">UX/UI Design</option>
+            <option value="seo">Performance &amp; SEO</option>
+            <option value="autre">Autre projet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget estimé</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Fourchette budgétaire (facultatif)</option>
+            <option>Moins de 1 000 €</option>
+            <option>1 000 – 3 000 €</option>
+            <option>3 000 – 6 000 €</option>
+            <option>6 000 – 12 000 €</option>
+            <option>Plus de 12 000 €</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Dites-m'en plus… <span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="Décrivez brièvement vos objectifs, votre secteur et vos délais souhaités…" rows="5" required></textarea>
+        </div>
+
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div id="alertSuccess" class="alert success">Message envoyé ! Je vous recontacte sous 24h.</div>
+        <div id="alertError" class="alert error"><span id="errorMsg">Merci de remplir tous les champs obligatoires.</span></div>
+
+        <button type="submit" class="btn-ink" id="submitBtn" style="align-self:flex-start;">ENVOYER LE MESSAGE →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">PRIL<span>U</span>ME</a>
+        <p>Créateur d'expériences digitales haut de gamme et de solutions web sur-mesure.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="Dribbble">dr</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#projets">Projets</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#process">Process</a></li>
+          <li><a href="index.html#avis">Avis</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Beauvais, France</p>
+        <p>Disponible à distance</p>
+        <p><a href="mailto:hello@prilume.fr">hello@prilume.fr</a></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom" style="padding-left:0;padding-right:0;">
+      <span>© 2026 PRILUME — TOUS DROITS RÉSERVÉS</span>
+      <div class="legal-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const form = document.getElementById("contactForm");
+const btn  = document.getElementById("submitBtn");
+form.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
+  const project = document.getElementById("project").value;
+  const message = document.getElementById("message").value.trim();
+  const ok = name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && project && message;
+
+  document.getElementById("alertError").style.display = "none";
+  document.getElementById("alertSuccess").style.display = "none";
+
+  if(!ok){
+    const el = document.getElementById("alertError");
+    el.style.display = "block";
+    el.scrollIntoView({behavior:"smooth", block:"nearest"});
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = "ENVOI EN COURS…";
+  await new Promise(r=>setTimeout(r,1200));
+  document.getElementById("alertSuccess").style.display = "block";
+  form.reset();
+  btn.disabled = false;
+  btn.textContent = "ENVOYER LE MESSAGE →";
+});
+form.querySelectorAll("input,select,textarea").forEach(el=>{
+  el.addEventListener("focus", ()=> el.style.borderBottomColor = "");
+});
+</script>
+
+</body>
+</html>

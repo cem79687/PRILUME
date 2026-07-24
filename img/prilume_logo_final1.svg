@@ -1,0 +1,103 @@
+<svg width="100%" viewBox="0 0 680 520" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Prilume logo final — Violet to Cyan</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Final Prilume logo with violet to cyan gradient matching the site palette</desc>
+
+  <defs>
+    <linearGradient id="arcG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9F7AEA"/>
+      <stop offset="100%" style="stop-color:#00C2FF"/>
+    </linearGradient>
+    <linearGradient id="triTopG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B090FF"/>
+      <stop offset="100%" style="stop-color:#7B5CF5"/>
+    </linearGradient>
+    <linearGradient id="triBotG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C2FF"/>
+      <stop offset="100%" style="stop-color:#00E5B0"/>
+    </linearGradient>
+    <linearGradient id="triMidG" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0A0FF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00C2FF;stop-opacity:0.35"/>
+    </linearGradient>
+    <linearGradient id="beamG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9F7AEA;stop-opacity:0.9"/>
+      <stop offset="35%" style="stop-color:#00C2FF;stop-opacity:0.6"/>
+      <stop offset="70%" style="stop-color:#00E5B0;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00E5B0;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="beamTopG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#B090FF;stop-opacity:0.55"/>
+      <stop offset="100%" style="stop-color:#B090FF;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="flareG" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.85"/>
+    </linearGradient>
+    <linearGradient id="stemG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B5CF5;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0099CC;stop-opacity:0.7"/>
+    </linearGradient>
+  </defs>
+
+  
+
+  <!-- ── FOND SOMBRE (aperçu) ── -->
+  <rect x="0" y="0" width="680" height="520" rx="0" fill="#08090F" style="fill:rgb(8, 9, 15);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── SYMBOLE P ── -->
+  <g transform="translate(220, 60)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+    <!-- Tige verticale gauche -->
+    <rect x="0" y="0" width="16" height="220" rx="3" fill="url(#stemG)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Arc demi-cercle -->
+    <path d="M16 4 A88 108 0 0 1 16 216" stroke="url(#arcG)" stroke-width="20" fill="none" stroke-linecap="round" style="fill:none;color:rgb(251, 251, 254);stroke-width:20px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Triangle supérieur (violet) -->
+    <polygon points="16,8 16,110 118,60" fill="url(#triTopG)" opacity="0.95" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Triangle inférieur (cyan) -->
+    <polygon points="16,110 16,212 118,162" fill="url(#triBotG)" opacity="0.88" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.88;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Triangle intérieur (reflet prisme) -->
+    <polygon points="16,50 16,115 58,82" fill="url(#triMidG)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Arêtes du prisme -->
+    <line x1="16" y1="8" x2="118" y2="60" stroke="rgba(255,255,255,0.22)" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgba(255, 255, 255, 0.22);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="16" y1="110" x2="118" y2="60" stroke="rgba(255,255,255,0.17)" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgba(255, 255, 255, 0.17);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="16" y1="110" x2="118" y2="162" stroke="rgba(255,255,255,0.17)" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgba(255, 255, 255, 0.17);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="16" y1="212" x2="118" y2="162" stroke="rgba(255,255,255,0.12)" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgba(255, 255, 255, 0.12);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Beam principal (triangle de lumière) -->
+    <path d="M16,110 L210,88 L210,132 Z" fill="url(#beamG)" opacity="0.7" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Beam fin supérieur (reflet violet) -->
+    <path d="M16,110 L195,96 L195,104 Z" fill="url(#beamTopG)" opacity="0.55" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Rayons blancs vers la gauche (effet lentille) -->
+    <line x1="-50" y1="80" x2="16" y2="110" stroke="url(#flareG)" stroke-width="1.4" opacity="0.7" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="-35" y1="95" x2="16" y2="110" stroke="url(#flareG)" stroke-width="0.8" opacity="0.4" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="-45" y1="125" x2="16" y2="110" stroke="url(#flareG)" stroke-width="0.6" opacity="0.25" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Point focal lumineux -->
+    <circle cx="16" cy="110" r="5" fill="white" opacity="0.95" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <circle cx="16" cy="110" r="11" fill="white" opacity="0.14" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.14;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <circle cx="16" cy="110" r="20" fill="white" opacity="0.05" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.05;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  </g>
+
+  <!-- ── SÉPARATEUR ── -->
+  <line x1="280" y1="308" x2="400" y2="308" stroke="#9F7AEA" stroke-width="0.6" opacity="0.35" style="fill:rgb(0, 0, 0);stroke:rgb(159, 122, 234);color:rgb(251, 251, 254);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── TEXTE PRILUME ── -->
+  <!-- On dessine manuellement pour contrôler le U en cyan -->
+  <text x="340" y="296" text-anchor="middle" style="fill:rgb(240, 238, 248);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Outfit&quot;, sans-serif;font-size:54px;font-weight:600;text-anchor:middle;dominant-baseline:auto">PRIL<tspan fill="#00C2FF" style="fill:rgb(0, 194, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Outfit&quot;, sans-serif;font-size:54px;font-weight:600;text-anchor:middle;dominant-baseline:auto">U</tspan>ME</text>
+
+  <!-- Barres du ≡ (remplacement du E) alignées -->
+  <rect x="471" y="260" width="18" height="3" rx="1.5" fill="#00C2FF" opacity="0.9" style="fill:rgb(0, 194, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="471" y="269" width="12" height="3" rx="1.5" fill="#9F7AEA" opacity="0.7" style="fill:rgb(159, 122, 234);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── ILLUMINATE IDEAS ── -->
+  <text x="340" y="326" text-anchor="middle" style="fill:rgb(159, 122, 234);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Outfit&quot;, sans-serif;font-size:13px;font-weight:300;text-anchor:middle;dominant-baseline:auto">ILLUMINATE IDEAS</text>
+
+</svg>

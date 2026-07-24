@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prilume — Illuminate Ideas | Freelance UX/UI & Développeur Web Beauvais</title>
 <meta name="description" content="Freelance UX/UI & développeur web basé à Beauvais. Sites vitrines, refontes et expériences digitales sur-mesure. Devis gratuit.">
-<link rel="icon" type="image/png" href="img/prilume_logo1.png">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -47,7 +49,7 @@
 
     <div class="hero-right">
       <div class="optic">
-        <svg viewBox="0 0 460 480" id="opticSvg">
+        <svg viewBox="0 85 460 300" id="opticSvg">
           <line id="p-incident" class="draw" x1="0" y1="240" x2="170" y2="240" stroke="#181511" stroke-width="1.2"/>
           <polygon id="p-prism" class="draw" points="170,150 170,330 300,240" stroke="#181511" stroke-width="1.4"/>
 
@@ -59,15 +61,8 @@
 
           <circle class="dot-pop" cx="170" cy="240" r="3.2" fill="#181511" style="animation-delay:.55s"/>
           <circle class="dot-pop" cx="300" cy="240" r="3.2" fill="#181511" style="animation-delay:.95s"/>
-
-          <g stroke="rgba(24,21,17,0.25)" stroke-width="0.5">
-            <line x1="0" y1="60" x2="460" y2="60"/>
-            <line x1="0" y1="420" x2="460" y2="420"/>
-          </g>
-          <text class="optic-label" x="6" y="52" style="animation-delay:.1s">λ INCIDENT</text>
-          <text class="optic-label" x="360" y="112" style="animation-delay:1.5s">700NM</text>
-          <text class="optic-label" x="360" y="252" style="animation-delay:1.9s">450NM</text>
         </svg>
+        <div class="optic-caption" id="opticCaption">ONE VISION. <span class="lambda">INFINITE DIRECTIONS.</span></div>
       </div>
     </div>
   </section>
@@ -331,15 +326,19 @@
       el.getBoundingClientRect();
       el.style.animation = "";
     });
+
+    // texte "PRISM OF IDEAS" : reapparait juste apres la fin du dernier rayon
+    const caption = document.getElementById("opticCaption");
+    if(caption){
+      caption.classList.remove("show");
+      void caption.offsetWidth; // force reflow pour rejouer la transition
+      setTimeout(()=> caption.classList.add("show"), 3900);
+    }
   }
 
   // Delais des points/labels ajustes pour coller au rythme plus lent
   document.getElementById("opticSvg").querySelectorAll(".dot-pop")[0].style.animationDelay = ".85s";
   document.getElementById("opticSvg").querySelectorAll(".dot-pop")[1].style.animationDelay = "2.15s";
-  const labels = document.getElementById("opticSvg").querySelectorAll(".optic-label");
-  labels[0].style.animationDelay = ".15s";
-  labels[1].style.animationDelay = "2.9s";
-  labels[2].style.animationDelay = "3.3s";
 
   window.addEventListener("load", ()=>{
     requestAnimationFrame(animatePrism);

@@ -3,8 +3,102 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO PRIMAIRE ═══ -->
 <title>Prilume — Illuminate Ideas | Freelance UX/UI & Développeur Web Beauvais</title>
 <meta name="description" content="Freelance UX/UI & développeur web basé à Beauvais. Sites vitrines, refontes et expériences digitales sur-mesure. Devis gratuit.">
+<meta name="author" content="Prilume">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#F3EFE4">
+<link rel="canonical" href="https://www.prilume.fr/">
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Prilume">
+<meta property="og:url" content="https://www.prilume.fr/">
+<meta property="og:title" content="Prilume — Illuminate Ideas | Création de sites web modernes">
+<meta property="og:description" content="Freelance UX/UI & développeur web basé à Beauvais. Sites vitrines, refontes et expériences digitales sur-mesure. Devis gratuit.">
+<meta property="og:image" content="https://www.prilume.fr/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prilume — Illuminate Ideas">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prilume — Illuminate Ideas | Création de sites web modernes">
+<meta name="twitter:description" content="Freelance UX/UI & développeur web. Sites vitrines, refontes, UX/UI design sur-mesure. Basé à Beauvais.">
+<meta name="twitter:image" content="https://www.prilume.fr/img/og-image.jpg">
+
+<!-- ═══ SCHEMA.ORG JSON-LD ═══ -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prilume",
+    "url": "https://www.prilume.fr",
+    "email": "hello@prilume.fr",
+    "jobTitle": "Développeur Web & Designer UX/UI Freelance — Prilume",
+    "description": "Freelance UX/UI & développeur web. Basé à Beauvais, disponible à distance. Illuminate Ideas.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beauvais",
+      "addressRegion": "Hauts-de-France",
+      "addressCountry": "FR"
+    },
+    "knowsAbout": ["Création de site web", "UX/UI Design", "SEO", "Refonte web", "Performance web", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.prilume.fr",
+    "name": "Prilume",
+    "description": "Freelance UX/UI & développeur web — Illuminate Ideas",
+    "inLanguage": "fr-FR"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Services Prilume",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "position": 1,
+        "name": "Création de site vitrine",
+        "description": "Développement de sites élégants et optimisés pour présenter votre activité.",
+        "provider": { "@type": "Person", "name": "Prilume" },
+        "areaServed": "France"
+      },
+      {
+        "@type": "Service",
+        "position": 2,
+        "name": "Refonte de site web",
+        "description": "Modernisation complète de votre image de marque et mise à jour technologique.",
+        "provider": { "@type": "Person", "name": "Prilume" },
+        "areaServed": "France"
+      },
+      {
+        "@type": "Service",
+        "position": 3,
+        "name": "UX/UI Design",
+        "description": "Conception d'interfaces intuitives centrées sur l'utilisateur.",
+        "provider": { "@type": "Person", "name": "Prilume" },
+        "areaServed": "France"
+      },
+      {
+        "@type": "Service",
+        "position": 4,
+        "name": "Performance & SEO",
+        "description": "Optimisation technique et référencement naturel.",
+        "provider": { "@type": "Person", "name": "Prilume" },
+        "areaServed": "France"
+      }
+    ]
+  }
+]
+</script>
+
 <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -129,7 +223,7 @@
             <span class="tag">Site vitrine</span>
             <h3>HBNova Bâti</h3>
           </div>
-          <a href="https://cem79687.github.io/BatiNova/" target="_blank">Voir le projet →</a>
+          <a href="#" target="_blank">Voir le projet →</a>
         </div>
       </div>
     </div>
@@ -357,6 +451,41 @@
     });
   }, { threshold:0.4 });
   sections.forEach(s=>obs.observe(s));
+</script>
+
+<a href="contact.html" class="floating-cta" id="floatingCta">DÉMARRER UN PROJET →</a>
+
+<script>
+  /* CTA flottant : apparait apres le hero, se cache pres du gros CTA du bas
+     (pour eviter d'avoir deux boutons identiques visibles en meme temps) */
+  const floatingCta = document.getElementById("floatingCta");
+  const heroSection  = document.querySelector(".hero");
+  const ctaBand      = document.querySelector(".cta-band");
+  let pastHero = false;
+  let nearBigCta = false;
+
+  function updateFloatingCta(){
+    if(!floatingCta) return;
+    floatingCta.classList.toggle("show", pastHero && !nearBigCta);
+  }
+
+  if(heroSection){
+    new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        pastHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+        updateFloatingCta();
+      });
+    }, { threshold:0 }).observe(heroSection);
+  }
+
+  if(ctaBand){
+    new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        nearBigCta = e.isIntersecting;
+        updateFloatingCta();
+      });
+    }, { threshold:0.15 }).observe(ctaBand);
+  }
 </script>
 
 </body>

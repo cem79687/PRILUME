@@ -3,9 +3,69 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO PRIMAIRE ═══ -->
 <title>Contact — Prilume | Démarrons votre projet web</title>
 <meta name="description" content="Contactez Prilume pour votre projet web. Création de site vitrine, refonte, UX/UI design. Premier échange gratuit et sans engagement. Basé à Beauvais.">
-<link rel="icon" type="image/png" href="img/prilume_logo1.png">
+<meta name="author" content="Prilume">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F3EFE4">
+<link rel="canonical" href="https://www.prilume.fr/contact.html">
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Prilume">
+<meta property="og:url" content="https://www.prilume.fr/contact.html">
+<meta property="og:title" content="Contact — Prilume | Démarrons votre projet web">
+<meta property="og:description" content="Premier échange gratuit et sans engagement. Réponse sous 24h.">
+<meta property="og:image" content="https://www.prilume.fr/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Prilume">
+<meta name="twitter:description" content="Démarrons votre projet web. Premier échange gratuit et sans engagement.">
+<meta name="twitter:image" content="https://www.prilume.fr/img/og-image.jpg">
+
+<!-- ═══ SCHEMA.ORG — FAQ (utilise pour l'affichage enrichi Google) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le délai pour créer un site web ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En général, un site vitrine est livré en 2 à 4 semaines selon la complexité du projet, après validation des maquettes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel budget prévoir pour un site vitrine ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un site vitrine sur-mesure démarre généralement à partir de 1 000 €. Le budget varie selon le nombre de pages, les fonctionnalités et le niveau de design souhaité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous à distance ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, je travaille à distance pour des clients partout en France. Les échanges se font par email, visio et outils de collaboration en ligne."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -169,20 +229,43 @@ form.addEventListener("submit", async (e)=>{
   const message = document.getElementById("message").value.trim();
   const ok = name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && project && message;
 
-  document.getElementById("alertError").style.display = "none";
-  document.getElementById("alertSuccess").style.display = "none";
+  const errorEl   = document.getElementById("alertError");
+  const successEl = document.getElementById("alertSuccess");
+  errorEl.style.display = "none";
+  successEl.style.display = "none";
 
   if(!ok){
-    const el = document.getElementById("alertError");
-    el.style.display = "block";
-    el.scrollIntoView({behavior:"smooth", block:"nearest"});
+    document.getElementById("errorMsg").textContent = "Merci de remplir tous les champs obligatoires.";
+    errorEl.style.display = "block";
+    errorEl.scrollIntoView({behavior:"smooth", block:"nearest"});
     return;
   }
+
   btn.disabled = true;
   btn.textContent = "ENVOI EN COURS…";
-  await new Promise(r=>setTimeout(r,1200));
-  document.getElementById("alertSuccess").style.display = "block";
-  form.reset();
+
+  try{
+    const response = await fetch("contact-handler.php", {
+      method: "POST",
+      body: new FormData(form),
+    });
+    const data = await response.json();
+
+    if(data.success){
+      successEl.style.display = "block";
+      successEl.scrollIntoView({behavior:"smooth", block:"nearest"});
+      form.reset();
+    } else {
+      document.getElementById("errorMsg").textContent = data.error || "Une erreur est survenue. Merci de reessayer.";
+      errorEl.style.display = "block";
+      errorEl.scrollIntoView({behavior:"smooth", block:"nearest"});
+    }
+  } catch(err){
+    document.getElementById("errorMsg").textContent = "Impossible de contacter le serveur. Ecrivez-nous directement a hello@prilume.fr.";
+    errorEl.style.display = "block";
+    errorEl.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+
   btn.disabled = false;
   btn.textContent = "ENVOYER LE MESSAGE →";
 });

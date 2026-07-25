@@ -279,3 +279,19 @@ form#contactForm{ display:flex; flex-direction:column; gap:22px; }
 .legal-content li{ padding-left:16px; position:relative; }
 .legal-content li::before{ content:"—"; position:absolute; left:0; color:var(--violet); }
 .legal-content .fill{ background:rgba(255,70,32,0.12); color:var(--orange); padding:1px 6px; font-size:12px; }
+
+/* ============ CTA FLOTTANT (suit au scroll) ============ */
+.floating-cta{
+  position:fixed; bottom:28px; right:28px; z-index:50;
+  background:var(--ink); color:var(--paper);
+  font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.05em;
+  padding:15px 24px; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  opacity:0; transform:translateY(14px); pointer-events:none;
+  transition:opacity .35s ease, transform .35s ease, background .2s ease;
+}
+.floating-cta.show{ opacity:1; transform:translateY(0); pointer-events:auto; }
+.floating-cta:hover{ background:var(--orange); }
+@media (max-width:700px){
+  .floating-cta{ bottom:18px; right:18px; left:18px; justify-content:center; padding:14px 20px; }
+}

@@ -120,7 +120,7 @@
     <a href="#process">Process</a>
     <a href="#avis">Avis</a>
   </nav>
-  <a href="contact.html" class="cta-tag">Discutons →</a>
+  <a href="contact.html" class="cta-tag">Contact →</a>
 </header>
 
 <div class="wrap">
@@ -392,13 +392,13 @@
 <script>
   function animatePrism(){
     const seq = [
-      { id:"p-incident", d:900,  t:0 },
-      { id:"p-prism",    d:1200, t:800 },
-      { id:"p-r1",       d:600,  t:2200 },
-      { id:"p-r2",       d:600,  t:2420 },
-      { id:"p-r3",       d:600,  t:2640 },
-      { id:"p-r4",       d:600,  t:2860 },
-      { id:"p-r5",       d:600,  t:3080 },
+      { id:"p-incident", d:550,  t:0 },
+      { id:"p-prism",    d:750,  t:450 },
+      { id:"p-r1",       d:400,  t:1300 },
+      { id:"p-r2",       d:400,  t:1450 },
+      { id:"p-r3",       d:400,  t:1600 },
+      { id:"p-r4",       d:400,  t:1750 },
+      { id:"p-r5",       d:400,  t:1900 },
     ];
     seq.forEach(({id,d,t})=>{
       const el = document.getElementById(id);
@@ -424,18 +424,18 @@
     if(caption){
       caption.classList.remove("show");
       void caption.offsetWidth; // force reflow pour rejouer la transition
-      setTimeout(()=> caption.classList.add("show"), 3900);
+      setTimeout(()=> caption.classList.add("show"), 2450);
     }
   }
 
   // Delais des points/labels ajustes pour coller au rythme plus lent
-  document.getElementById("opticSvg").querySelectorAll(".dot-pop")[0].style.animationDelay = ".85s";
-  document.getElementById("opticSvg").querySelectorAll(".dot-pop")[1].style.animationDelay = "2.15s";
+  document.getElementById("opticSvg").querySelectorAll(".dot-pop")[0].style.animationDelay = ".5s";
+  document.getElementById("opticSvg").querySelectorAll(".dot-pop")[1].style.animationDelay = "1.3s";
 
   window.addEventListener("load", ()=>{
     requestAnimationFrame(animatePrism);
     // boucle douce : relance toute la sequence toutes les 8 secondes
-    setInterval(()=> requestAnimationFrame(animatePrism), 8000);
+    setInterval(()=> requestAnimationFrame(animatePrism), 6000);
   });
 
   /* Nav active au scroll */

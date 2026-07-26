@@ -28,7 +28,17 @@
     <a href="index.html#process">Process</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <a href="contact.html" class="cta-tag">Contact →</a>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de theme">
+      <svg class="icon-prism-filled" viewBox="0 0 20 20" fill="none">
+        <polygon points="6,4 6,16 16,10" fill="var(--ink)"/>
+      </svg>
+      <svg class="icon-prism-outline" viewBox="0 0 20 20" fill="none">
+        <polygon points="6,4 6,16 16,10" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <a href="contact.html" class="cta-tag">Contact →</a>
+  </div>
 </header>
 
 <div class="wrap">
@@ -123,6 +133,52 @@
   </footer>
 
 </div>
+
+<script>
+  (function(){
+    const stored = localStorage.getItem("prilume-theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initial = stored || (systemDark ? "dark" : "light");
+    if(initial === "dark") document.documentElement.setAttribute("data-theme", "dark");
+  })();
+
+  /* Petit son discret au changement de theme (synthetise, aucun fichier audio) */
+  let audioCtx = null;
+  function playToggleSound(goingDark){
+    try{
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if(audioCtx.state === "suspended") audioCtx.resume();
+
+      const notes = goingDark ? [660, 440] : [520, 700];
+      notes.forEach((freq, i)=>{
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = freq;
+        const start = audioCtx.currentTime + i * 0.085;
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.05, start + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.15);
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start(start);
+        osc.stop(start + 0.16);
+      });
+    } catch(e){ /* Web Audio indisponible : on ignore silencieusement */ }
+  }
+
+  document.getElementById("themeToggle").addEventListener("click", ()=>{
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if(isDark){
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("prilume-theme", "light");
+      playToggleSound(false);
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("prilume-theme", "dark");
+      playToggleSound(true);
+    }
+  });
+</script>
 
 </body>
 </html>

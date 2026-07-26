@@ -120,7 +120,17 @@
     <a href="#process">Process</a>
     <a href="#avis">Avis</a>
   </nav>
-  <a href="contact.html" class="cta-tag">Contact →</a>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+      <svg class="icon-prism-filled" viewBox="0 0 20 20" fill="none">
+        <polygon points="6,4 6,16 16,10" fill="var(--ink)"/>
+      </svg>
+      <svg class="icon-prism-outline" viewBox="0 0 20 20" fill="none">
+        <polygon points="6,4 6,16 16,10" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <a href="contact.html" class="cta-tag">Contact →</a>
+  </div>
 </header>
 
 <div class="wrap">
@@ -144,17 +154,17 @@
     <div class="hero-right">
       <div class="optic">
         <svg viewBox="0 85 460 300" id="opticSvg">
-          <line id="p-incident" class="draw" x1="0" y1="240" x2="170" y2="240" stroke="#181511" stroke-width="1.2"/>
-          <polygon id="p-prism" class="draw" points="170,150 170,330 300,240" stroke="#181511" stroke-width="1.4"/>
+          <line id="p-incident" class="draw" x1="0" y1="240" x2="170" y2="240" stroke="var(--ink)" stroke-width="1.2"/>
+          <polygon id="p-prism" class="draw" points="170,150 170,330 300,240" stroke="var(--ink)" stroke-width="1.4"/>
 
-          <line id="p-r1" class="draw" x1="300" y1="240" x2="440" y2="120" stroke="#FF4620" stroke-width="1.4"/>
-          <line id="p-r2" class="draw" x1="300" y1="240" x2="450" y2="180" stroke="#e2551f" stroke-width="1.1"/>
-          <line id="p-r3" class="draw" x1="300" y1="240" x2="455" y2="240" stroke="#5B3DF5" stroke-width="1"/>
-          <line id="p-r4" class="draw" x1="300" y1="240" x2="450" y2="300" stroke="#3d2ba3" stroke-width="0.9"/>
-          <line id="p-r5" class="draw" x1="300" y1="240" x2="440" y2="360" stroke="#181511" stroke-width="0.6"/>
+          <line id="p-r1" class="draw" x1="300" y1="240" x2="440" y2="120" stroke="var(--orange)" stroke-width="1.4"/>
+          <line id="p-r2" class="draw" x1="300" y1="240" x2="450" y2="180" stroke="var(--orange-dark)" stroke-width="1.1"/>
+          <line id="p-r3" class="draw" x1="300" y1="240" x2="455" y2="240" stroke="var(--violet)" stroke-width="1"/>
+          <line id="p-r4" class="draw" x1="300" y1="240" x2="450" y2="300" stroke="var(--violet-dark)" stroke-width="0.9"/>
+          <line id="p-r5" class="draw" x1="300" y1="240" x2="440" y2="360" stroke="var(--ink)" stroke-width="0.6"/>
 
-          <circle class="dot-pop" cx="170" cy="240" r="3.2" fill="#181511" style="animation-delay:.55s"/>
-          <circle class="dot-pop" cx="300" cy="240" r="3.2" fill="#181511" style="animation-delay:.95s"/>
+          <circle class="dot-pop" cx="170" cy="240" r="3.2" fill="var(--ink)" style="animation-delay:.55s"/>
+          <circle class="dot-pop" cx="300" cy="240" r="3.2" fill="var(--ink)" style="animation-delay:.95s"/>
         </svg>
         <div class="optic-caption" id="opticCaption">ONE VISION. <span class="lambda">INFINITE DIRECTIONS.</span></div>
       </div>
@@ -174,42 +184,42 @@
     <div class="features-grid">
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 34 34" fill="none">
-          <line x1="10" y1="26" x2="24" y2="8" stroke="#181511" stroke-width="1.3"/>
-          <line x1="10" y1="26" x2="6" y2="10" stroke="#181511" stroke-width="1.3"/>
-          <circle cx="10" cy="26" r="2.2" fill="#181511"/>
-          <circle cx="24" cy="8" r="1.6" fill="#FF4620"/>
-          <circle cx="6" cy="10" r="1.6" fill="#5B3DF5"/>
+          <line x1="10" y1="26" x2="24" y2="8" stroke="var(--ink)" stroke-width="1.3"/>
+          <line x1="10" y1="26" x2="6" y2="10" stroke="var(--ink)" stroke-width="1.3"/>
+          <circle cx="10" cy="26" r="2.2" fill="var(--ink)"/>
+          <circle cx="24" cy="8" r="1.6" fill="var(--orange)"/>
+          <circle cx="6" cy="10" r="1.6" fill="var(--violet)"/>
         </svg>
         <h3>Approche sur-mesure</h3>
         <p>Chaque projet est unique et mérite une solution personnalisée, pensée pour votre activité.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 34 34" fill="none">
-          <circle cx="9" cy="17" r="2" fill="#181511"/>
-          <path d="M14 11.5a8 8 0 0 1 0 11" stroke="#5B3DF5" stroke-width="1.2" fill="none"/>
-          <path d="M19 8a13 13 0 0 1 0 18" stroke="#FF4620" stroke-width="1.1" fill="none" opacity="0.8"/>
-          <path d="M24 5a17 17 0 0 1 0 24" stroke="#FF4620" stroke-width="1" fill="none" opacity="0.5"/>
+          <circle cx="9" cy="17" r="2" fill="var(--ink)"/>
+          <path d="M14 11.5a8 8 0 0 1 0 11" stroke="var(--violet)" stroke-width="1.2" fill="none"/>
+          <path d="M19 8a13 13 0 0 1 0 18" stroke="var(--orange)" stroke-width="1.1" fill="none" opacity="0.8"/>
+          <path d="M24 5a17 17 0 0 1 0 24" stroke="var(--orange)" stroke-width="1" fill="none" opacity="0.5"/>
         </svg>
         <h3>Communication claire</h3>
         <p>Réactivité et transparence totale à chaque étape du projet, sans jargon inutile.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 34 34" fill="none">
-          <line x1="6" y1="28" x2="27" y2="7" stroke="#181511" stroke-width="1.3"/>
-          <circle cx="6" cy="28" r="2" fill="#181511"/>
-          <circle cx="27" cy="7" r="2.2" fill="#FF4620"/>
-          <line x1="27" y1="7" x2="27" y2="14" stroke="#FF4620" stroke-width="1" opacity="0.6"/>
-          <line x1="27" y1="7" x2="20" y2="7" stroke="#FF4620" stroke-width="1" opacity="0.6"/>
+          <line x1="6" y1="28" x2="27" y2="7" stroke="var(--ink)" stroke-width="1.3"/>
+          <circle cx="6" cy="28" r="2" fill="var(--ink)"/>
+          <circle cx="27" cy="7" r="2.2" fill="var(--orange)"/>
+          <line x1="27" y1="7" x2="27" y2="14" stroke="var(--orange)" stroke-width="1" opacity="0.6"/>
+          <line x1="27" y1="7" x2="20" y2="7" stroke="var(--orange)" stroke-width="1" opacity="0.6"/>
         </svg>
         <h3>Focus performance</h3>
         <p>Vitesse de chargement, SEO et Core Web Vitals optimisés pour des résultats concrets.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 34 34" fill="none">
-          <line x1="7" y1="17" x2="27" y2="17" stroke="#181511" stroke-width="1.2" stroke-dasharray="1 3.4"/>
-          <circle cx="7" cy="17" r="2.1" fill="#181511"/>
-          <circle cx="27" cy="17" r="2.1" fill="#5B3DF5"/>
-          <circle cx="17" cy="17" r="1.6" fill="#FF4620"/>
+          <line x1="7" y1="17" x2="27" y2="17" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="1 3.4"/>
+          <circle cx="7" cy="17" r="2.1" fill="var(--ink)"/>
+          <circle cx="27" cy="17" r="2.1" fill="var(--violet)"/>
+          <circle cx="17" cy="17" r="1.6" fill="var(--orange)"/>
         </svg>
         <h3>Accompagnement</h3>
         <p>De la stratégie à la mise en ligne, je reste à vos côtés bien après la livraison.</p>
@@ -271,15 +281,15 @@
     <div class="services-grid">
       <div class="service-box">
         <svg class="service-illu" id="illu1" viewBox="0 0 120 74" fill="none">
-          <rect class="s-draw" x="1" y="1" width="118" height="72" rx="2" stroke="#181511" stroke-width="1.2"/>
-          <line class="s-draw" x1="1" y1="16" x2="119" y2="16" stroke="#181511" stroke-width="1"/>
-          <circle class="s-dot" cx="10" cy="8.5" r="1.6" fill="#FF4620"/>
-          <circle class="s-dot" cx="17" cy="8.5" r="1.6" fill="#5B3DF5"/>
-          <circle class="s-dot" cx="24" cy="8.5" r="1.6" fill="#181511" opacity="0.4"/>
-          <line class="s-draw" x1="14" y1="30" x2="70" y2="30" stroke="#181511" stroke-width="1.4"/>
-          <line class="s-draw" x1="14" y1="42" x2="90" y2="42" stroke="#181511" stroke-width="1" opacity="0.5"/>
-          <line class="s-draw" x1="14" y1="50" x2="76" y2="50" stroke="#181511" stroke-width="1" opacity="0.5"/>
-          <rect class="s-draw" x="14" y="58" width="30" height="9" stroke="#FF4620" stroke-width="1.1"/>
+          <rect class="s-draw" x="1" y="1" width="118" height="72" rx="2" stroke="var(--ink)" stroke-width="1.2"/>
+          <line class="s-draw" x1="1" y1="16" x2="119" y2="16" stroke="var(--ink)" stroke-width="1"/>
+          <circle class="s-dot" cx="10" cy="8.5" r="1.6" fill="var(--orange)"/>
+          <circle class="s-dot" cx="17" cy="8.5" r="1.6" fill="var(--violet)"/>
+          <circle class="s-dot" cx="24" cy="8.5" r="1.6" fill="var(--ink)" opacity="0.4"/>
+          <line class="s-draw" x1="14" y1="30" x2="70" y2="30" stroke="var(--ink)" stroke-width="1.4"/>
+          <line class="s-draw" x1="14" y1="42" x2="90" y2="42" stroke="var(--ink)" stroke-width="1" opacity="0.5"/>
+          <line class="s-draw" x1="14" y1="50" x2="76" y2="50" stroke="var(--ink)" stroke-width="1" opacity="0.5"/>
+          <rect class="s-draw" x="14" y="58" width="30" height="9" stroke="var(--orange)" stroke-width="1.1"/>
         </svg>
         <div class="n">01</div>
         <h3>Création de site vitrine</h3>
@@ -292,16 +302,16 @@
       </div>
       <div class="service-box">
         <svg class="service-illu" id="illu2" viewBox="0 0 120 74" fill="none">
-          <rect class="s-fade" x="1" y="7" width="60" height="60" rx="2" stroke="#181511" stroke-width="1" opacity="0" stroke-dasharray="2 3"/>
-          <line class="s-fade" x1="10" y1="24" x2="50" y2="24" stroke="#181511" stroke-width="0.9" opacity="0"/>
-          <line class="s-fade" x1="10" y1="34" x2="42" y2="34" stroke="#181511" stroke-width="0.9" opacity="0"/>
-          <rect class="s-draw" x="58" y="1" width="61" height="66" rx="2" stroke="#181511" stroke-width="1.3"/>
-          <line class="s-draw" x1="67" y1="20" x2="112" y2="20" stroke="#5B3DF5" stroke-width="1.3"/>
-          <line class="s-draw" x1="67" y1="30" x2="104" y2="30" stroke="#181511" stroke-width="1"/>
-          <line class="s-draw" x1="67" y1="38" x2="98" y2="38" stroke="#181511" stroke-width="1"/>
-          <rect class="s-draw" x="67" y="48" width="26" height="9" stroke="#FF4620" stroke-width="1.1"/>
-          <path class="s-draw" d="M48 34 L60 34" stroke="#FF4620" stroke-width="1.3"/>
-          <path class="s-draw" d="M55 29 L61 34 L55 39" stroke="#FF4620" stroke-width="1.3" fill="none"/>
+          <rect class="s-fade" x="1" y="7" width="60" height="60" rx="2" stroke="var(--ink)" stroke-width="1" opacity="0" stroke-dasharray="2 3"/>
+          <line class="s-fade" x1="10" y1="24" x2="50" y2="24" stroke="var(--ink)" stroke-width="0.9" opacity="0"/>
+          <line class="s-fade" x1="10" y1="34" x2="42" y2="34" stroke="var(--ink)" stroke-width="0.9" opacity="0"/>
+          <rect class="s-draw" x="58" y="1" width="61" height="66" rx="2" stroke="var(--ink)" stroke-width="1.3"/>
+          <line class="s-draw" x1="67" y1="20" x2="112" y2="20" stroke="var(--violet)" stroke-width="1.3"/>
+          <line class="s-draw" x1="67" y1="30" x2="104" y2="30" stroke="var(--ink)" stroke-width="1"/>
+          <line class="s-draw" x1="67" y1="38" x2="98" y2="38" stroke="var(--ink)" stroke-width="1"/>
+          <rect class="s-draw" x="67" y="48" width="26" height="9" stroke="var(--orange)" stroke-width="1.1"/>
+          <path class="s-draw" d="M48 34 L60 34" stroke="var(--orange)" stroke-width="1.3"/>
+          <path class="s-draw" d="M55 29 L61 34 L55 39" stroke="var(--orange)" stroke-width="1.3" fill="none"/>
         </svg>
         <div class="n">02</div>
         <h3>Refonte de site</h3>
@@ -314,12 +324,12 @@
       </div>
       <div class="service-box">
         <svg class="service-illu" id="illu3" viewBox="0 0 120 74" fill="none">
-          <rect class="s-draw" x="1" y="1" width="72" height="52" rx="2" stroke="#181511" stroke-width="1" opacity="0.4"/>
-          <rect class="s-draw" x="19" y="17" width="72" height="52" rx="2" stroke="#181511" stroke-width="1.3"/>
-          <line class="s-draw" x1="27" y1="30" x2="65" y2="30" stroke="#5B3DF5" stroke-width="1.2"/>
-          <line class="s-draw" x1="27" y1="39" x2="75" y2="39" stroke="#181511" stroke-width="1" opacity="0.6"/>
-          <circle class="s-draw" cx="27" cy="30" r="6" fill="none" stroke="#FF4620" stroke-width="1.2"/>
-          <line class="s-draw" x1="31.2" y1="34.2" x2="37" y2="40" stroke="#FF4620" stroke-width="1.2"/>
+          <rect class="s-draw" x="1" y="1" width="72" height="52" rx="2" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+          <rect class="s-draw" x="19" y="17" width="72" height="52" rx="2" stroke="var(--ink)" stroke-width="1.3"/>
+          <line class="s-draw" x1="27" y1="30" x2="65" y2="30" stroke="var(--violet)" stroke-width="1.2"/>
+          <line class="s-draw" x1="27" y1="39" x2="75" y2="39" stroke="var(--ink)" stroke-width="1" opacity="0.6"/>
+          <circle class="s-draw" cx="27" cy="30" r="6" fill="none" stroke="var(--orange)" stroke-width="1.2"/>
+          <line class="s-draw" x1="31.2" y1="34.2" x2="37" y2="40" stroke="var(--orange)" stroke-width="1.2"/>
         </svg>
         <div class="n">03</div>
         <h3>UX/UI Design</h3>
@@ -332,14 +342,14 @@
       </div>
       <div class="service-box">
         <svg class="service-illu" id="illu4" viewBox="0 0 120 74" fill="none">
-          <line class="s-draw" x1="1" y1="68" x2="119" y2="68" stroke="#181511" stroke-width="1" opacity="0.4"/>
-          <polyline class="s-draw" points="4,58 28,50 46,54 68,32 90,36 116,10" fill="none" stroke="#181511" stroke-width="1.3"/>
-          <circle class="s-dot" cx="4" cy="58" r="2" fill="#181511"/>
-          <circle class="s-dot" cx="46" cy="54" r="1.8" fill="#5B3DF5"/>
-          <circle class="s-dot" cx="68" cy="32" r="1.8" fill="#5B3DF5"/>
-          <circle class="s-dot" cx="116" cy="10" r="2.4" fill="#FF4620"/>
-          <line class="s-draw" x1="116" y1="10" x2="116" y2="1" stroke="#FF4620" stroke-width="1" opacity="0.6"/>
-          <line class="s-draw" x1="116" y1="10" x2="109" y2="4" stroke="#FF4620" stroke-width="1" opacity="0.6"/>
+          <line class="s-draw" x1="1" y1="68" x2="119" y2="68" stroke="var(--ink)" stroke-width="1" opacity="0.4"/>
+          <polyline class="s-draw" points="4,58 28,50 46,54 68,32 90,36 116,10" fill="none" stroke="var(--ink)" stroke-width="1.3"/>
+          <circle class="s-dot" cx="4" cy="58" r="2" fill="var(--ink)"/>
+          <circle class="s-dot" cx="46" cy="54" r="1.8" fill="var(--violet)"/>
+          <circle class="s-dot" cx="68" cy="32" r="1.8" fill="var(--violet)"/>
+          <circle class="s-dot" cx="116" cy="10" r="2.4" fill="var(--orange)"/>
+          <line class="s-draw" x1="116" y1="10" x2="116" y2="1" stroke="var(--orange)" stroke-width="1" opacity="0.6"/>
+          <line class="s-draw" x1="116" y1="10" x2="109" y2="4" stroke="var(--orange)" stroke-width="1" opacity="0.6"/>
         </svg>
         <div class="n">04</div>
         <h3>Performance &amp; SEO</h3>
@@ -652,6 +662,53 @@
         }
       });
     }, { threshold:0.35 }).observe(svg);
+  });
+</script>
+
+<script>
+  /* Theme dark/light : respecte le choix precedent (localStorage), sinon la preference systeme */
+  (function(){
+    const stored = localStorage.getItem("prilume-theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initial = stored || (systemDark ? "dark" : "light");
+    if(initial === "dark") document.documentElement.setAttribute("data-theme", "dark");
+  })();
+
+  /* Petit son discret au changement de theme (synthetise, aucun fichier audio) */
+  let audioCtx = null;
+  function playToggleSound(goingDark){
+    try{
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if(audioCtx.state === "suspended") audioCtx.resume();
+
+      const notes = goingDark ? [660, 440] : [520, 700];
+      notes.forEach((freq, i)=>{
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = freq;
+        const start = audioCtx.currentTime + i * 0.085;
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.05, start + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.15);
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start(start);
+        osc.stop(start + 0.16);
+      });
+    } catch(e){ /* Web Audio indisponible : on ignore silencieusement */ }
+  }
+
+  document.getElementById("themeToggle").addEventListener("click", ()=>{
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if(isDark){
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("prilume-theme", "light");
+      playToggleSound(false);
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("prilume-theme", "dark");
+      playToggleSound(true);
+    }
   });
 </script>
 

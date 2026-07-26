@@ -618,16 +618,16 @@
     fades.forEach(el=> el.classList.remove("show"));
     void svg.offsetWidth; // force reflow pour que la transition se rejoue
 
-    draws.forEach((el, i)=> drawEl(el, 500, i * 140));
-    const drawEnd = draws.length * 140 + 500;
+    draws.forEach((el, i)=> drawEl(el, 340, i * 90));
+    const drawEnd = draws.length * 90 + 340;
 
     dots.forEach((el, i)=>{
-      setTimeout(()=> el.classList.add("show"), drawEnd + i * 90);
+      setTimeout(()=> el.classList.add("show"), drawEnd + i * 60);
     });
 
     // Pour Refonte : l'ancien site (fantome) apparait en tout premier, avant le nouveau
     fades.forEach((el, i)=>{
-      setTimeout(()=> el.classList.add("show"), 80 + i * 100);
+      setTimeout(()=> el.classList.add("show"), 50 + i * 70);
     });
   }
 

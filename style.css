@@ -22,8 +22,8 @@
 }
 
 :root[data-theme="dark"]{
-  --paper: #16130F;
-  --paper-2: #1E1A14;
+  --paper: #0C0B09;
+  --paper-2: #14120E;
   --ink: #F1ECDF;
   --ink-soft: #D9D3C3;
   --ink-mute: #A29C8C;

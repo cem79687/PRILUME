@@ -4,6 +4,8 @@
 =================================================== */
 
 :root{
+  --theme-fade: 200ms;
+  --theme-slide: 260ms;
   --paper: #F3EFE4;
   --paper-2: #ECE7D8;
   --ink: #181511;
@@ -41,7 +43,7 @@
 
 /* Transition globale et douce sur tout ce qui reagit au changement de theme */
 body, body *{
-  transition: background-color .45s ease, color .45s ease, border-color .45s ease, fill .45s ease, stroke .45s ease;
+  transition: background-color var(--theme-fade) ease, color var(--theme-fade) ease, border-color var(--theme-fade) ease, fill var(--theme-fade) ease, stroke var(--theme-fade) ease;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -105,7 +107,7 @@ nav.links a:hover{ opacity:1; }
 
 .hamburger .bar{
   position:absolute; left:5px; right:5px; height:1.4px; background:var(--ink);
-  transition: transform .3s ease, opacity .2s ease, background-color .45s ease;
+  transition: transform .3s ease, opacity .2s ease, background-color var(--theme-fade) ease;
 }
 .hamburger .bar:nth-child(1){ top:11px; }
 .hamburger .bar:nth-child(2){ top:16px; }
@@ -121,7 +123,7 @@ nav.links a:hover{ opacity:1; }
   display:flex; flex-direction:column; justify-content:center;
   padding:0 32px;
   transform:translateY(-100%);
-  transition:transform .4s cubic-bezier(.65,0,.35,1), background-color .45s ease;
+  transition:transform var(--theme-slide) cubic-bezier(.65,0,.35,1), background-color var(--theme-fade) ease;
 }
 .mobile-menu.open{ transform:translateY(0); }
 
@@ -159,7 +161,7 @@ nav.links a:hover{ opacity:1; }
 .toggle-thumb{
   position:absolute; top:3px; left:3px;
   width:24px; height:24px;
-  transition: transform .4s cubic-bezier(.65,0,.35,1), background-color .45s ease, color .45s ease, border-color .45s ease, fill .45s ease, stroke .45s ease;
+  transition: transform var(--theme-slide) cubic-bezier(.65,0,.35,1), background-color var(--theme-fade) ease, color var(--theme-fade) ease, border-color var(--theme-fade) ease, fill var(--theme-fade) ease, stroke var(--theme-fade) ease;
 }
 :root[data-theme="dark"] .toggle-thumb{ transform:translateX(44px); }
 
@@ -168,13 +170,13 @@ nav.links a:hover{ opacity:1; }
 .toggle-rays{
   position:absolute; top:50%; left:20px;
   transform:translateY(-50%);
-  transition: transform .4s ease, left .4s ease, right .4s ease;
+  transition: transform var(--theme-slide) ease, left var(--theme-slide) ease, right var(--theme-slide) ease;
 }
 :root[data-theme="dark"] .toggle-rays{
   left:auto; right:20px;
   transform:translateY(-50%) scaleX(-1);
 }
-.toggle-rays line{ transition: stroke .45s ease, opacity .35s ease; }
+.toggle-rays line{ transition: stroke var(--theme-fade) ease, opacity var(--theme-fade) ease; }
 
 /* ============ INDEX TAG (badge/kicker) ============ */
 .index-tag{

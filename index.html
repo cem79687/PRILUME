@@ -121,7 +121,7 @@
     <a href="#avis">Avis</a>
   </nav>
   <div style="display:flex; align-items:center; gap:12px;">
-    <div class="theme-toggle" id="themeToggle" role="button" tabindex="0" aria-label="Changer de theme">
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Changer de theme">
       <div class="toggle-thumb" id="toggleThumb">
         <svg class="toggle-rays" width="46" height="20" viewBox="0 0 46 20" overflow="visible">
           <line x1="0" y1="10" x2="40" y2="4"  stroke="var(--ray-1)" stroke-width="1.2" opacity="0.85"/>
@@ -132,10 +132,25 @@
           <polygon points="5,17 19,17 12,5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.3" stroke-linejoin="round"/>
         </svg>
       </div>
-    </div>
+    </button>
     <a href="contact.html" class="cta-tag">Contact →</a>
+    <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav>
+    <a href="#accueil" class="on">Accueil</a>
+    <a href="#projets">Projets</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#avis">Avis</a>
+  </nav>
+  <a href="contact.html" class="mobile-menu-cta">Démarrer un projet →</a>
+  <div class="mobile-menu-footer">PRILUME — BEAUVAIS, FRANCE</div>
+</div>
 
 <div class="wrap">
 
@@ -478,6 +493,19 @@
 </div>
 
 <script>
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function showPrismStatic(){
+    document.querySelectorAll("#opticSvg .draw").forEach(el=>{
+      el.style.transition = "none";
+      el.style.strokeDasharray = "none";
+      el.style.strokeDashoffset = "0";
+    });
+    document.querySelectorAll("#opticSvg .dot-pop").forEach(el=>{ el.style.animation = "none"; el.style.opacity = "1"; el.style.transform = "scale(1)"; });
+    const caption = document.getElementById("opticCaption");
+    if(caption) caption.classList.add("show");
+  }
+
   function animatePrism(){
     const seq = [
       { id:"p-incident", d:550,  t:0 },
@@ -521,9 +549,13 @@
   document.getElementById("opticSvg").querySelectorAll(".dot-pop")[1].style.animationDelay = "1.3s";
 
   window.addEventListener("load", ()=>{
-    requestAnimationFrame(animatePrism);
-    // boucle douce : relance toute la sequence toutes les 8 secondes
-    setInterval(()=> requestAnimationFrame(animatePrism), 6000);
+    if(prefersReducedMotion){
+      showPrismStatic();
+    } else {
+      requestAnimationFrame(animatePrism);
+      // boucle douce : relance toute la sequence toutes les 6 secondes
+      setInterval(()=> requestAnimationFrame(animatePrism), 6000);
+    }
   });
 
   /* Nav active au scroll */
@@ -584,6 +616,12 @@
   function animateCount(el){
     const target = parseInt(el.dataset.count, 10);
     const suffix = el.dataset.suffix || "";
+
+    if(prefersReducedMotion){
+      el.textContent = target + suffix;
+      return;
+    }
+
     const duration = 1400;
     const start = performance.now();
 
@@ -645,7 +683,22 @@
     });
   }
 
+  function showIllustrationStatic(svg){
+    svg.querySelectorAll(".s-draw").forEach(el=>{
+      el.style.transition = "none";
+      el.style.strokeDasharray = "none";
+      el.style.strokeDashoffset = "0";
+    });
+    svg.querySelectorAll(".s-dot").forEach(el=> el.classList.add("show"));
+    svg.querySelectorAll(".s-fade").forEach(el=> el.classList.add("show"));
+  }
+
   document.querySelectorAll(".service-illu").forEach((svg, index)=>{
+    if(prefersReducedMotion){
+      showIllustrationStatic(svg);
+      return;
+    }
+
     // prepare l'etat initial (invisible) avant tout scroll
     svg.querySelectorAll(".s-draw").forEach(el=>{
       const len = el.getTotalLength ? el.getTotalLength() : 0;
@@ -715,14 +768,40 @@
     }
   }
 
-  const themeToggleEl = document.getElementById("themeToggle");
-  themeToggleEl.addEventListener("click", toggleTheme);
-  themeToggleEl.addEventListener("keydown", (e)=>{
-    if(e.key === "Enter" || e.key === " "){
-      e.preventDefault();
-      toggleTheme();
+  document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+</script>
+
+<script>
+  (function(){
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    let lastFocused = null;
+
+    function openMenu(){
+      mobileMenu.classList.add("open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      hamburger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      lastFocused = document.activeElement;
+      const firstLink = mobileMenu.querySelector("a");
+      if(firstLink) firstLink.focus();
     }
-  });
+    function closeMenu(){
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      if(lastFocused) lastFocused.focus();
+    }
+    hamburger.addEventListener("click", ()=>{
+      const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+    mobileMenu.querySelectorAll("a").forEach(a=> a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && mobileMenu.classList.contains("open")) closeMenu();
+    });
+  })();
 </script>
 
 </body>

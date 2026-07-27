@@ -71,7 +71,8 @@ header.site-header{
   display:flex; align-items:center; justify-content:space-between;
   padding:32px 48px; max-width:1240px; margin:0 auto;
   border-bottom:1px solid var(--line);
-  position:relative; z-index:20;
+  position:sticky; top:0; z-index:40;
+  background:var(--paper);
 }
 @media (max-width:800px){ header.site-header{ padding:24px; } }
 
@@ -89,6 +90,58 @@ nav.links a:hover{ opacity:1; }
   border:1px solid var(--ink); text-decoration:none; white-space:nowrap;
 }
 .cta-tag:hover{ background:var(--ink); color:var(--paper); }
+@media (max-width:900px){ .cta-tag{ display:none; } }
+
+/* ============ HAMBURGER (mobile uniquement) ============ */
+.hamburger{
+  display:none;
+  width:32px; height:32px;
+  border:none; background:none; cursor:pointer;
+  padding:0; flex-shrink:0; position:relative; z-index:60;
+  appearance:none; -webkit-appearance:none;
+}
+@media (max-width:900px){ .hamburger{ display:block; } }
+.hamburger:focus-visible{ outline:2px solid var(--violet); outline-offset:3px; }
+
+.hamburger .bar{
+  position:absolute; left:5px; right:5px; height:1.4px; background:var(--ink);
+  transition: transform .3s ease, opacity .2s ease, background-color .45s ease;
+}
+.hamburger .bar:nth-child(1){ top:11px; }
+.hamburger .bar:nth-child(2){ top:16px; }
+.hamburger .bar:nth-child(3){ top:21px; }
+.hamburger[aria-expanded="true"] .bar:nth-child(1){ transform:translateY(5px) rotate(45deg); }
+.hamburger[aria-expanded="true"] .bar:nth-child(2){ opacity:0; }
+.hamburger[aria-expanded="true"] .bar:nth-child(3){ transform:translateY(-5px) rotate(-45deg); }
+
+/* ============ MENU MOBILE PLEIN ECRAN ============ */
+.mobile-menu{
+  position:fixed; inset:0; background:var(--paper);
+  z-index:50;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 32px;
+  transform:translateY(-100%);
+  transition:transform .4s cubic-bezier(.65,0,.35,1), background-color .45s ease;
+}
+.mobile-menu.open{ transform:translateY(0); }
+
+.mobile-menu nav{ display:flex; flex-direction:column; width:100%; }
+.mobile-menu nav a{
+  font-family:'Fraunces', serif; font-size:clamp(28px,9vw,40px); font-weight:500;
+  color:var(--ink); text-decoration:none; padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+.mobile-menu nav a.on{ color:var(--orange); }
+
+.mobile-menu-cta{
+  margin-top:32px; align-self:flex-start;
+  font-size:13px; letter-spacing:0.05em; padding:16px 26px;
+  background:var(--ink); color:var(--paper); text-decoration:none;
+}
+
+.mobile-menu-footer{
+  margin-top:36px; font-size:11px; letter-spacing:0.05em; color:var(--ink-faint);
+}
 
 /* ============ TOGGLE THEME (prisme qui glisse) ============ */
 .theme-toggle{
@@ -97,8 +150,11 @@ nav.links a:hover{ opacity:1; }
   position:relative; cursor:pointer;
   background:transparent; flex-shrink:0;
   overflow:hidden;
+  padding:0; appearance:none; -webkit-appearance:none;
+  font:inherit;
 }
 .theme-toggle:hover{ border-color:var(--ink); }
+.theme-toggle:focus-visible{ outline:2px solid var(--violet); outline-offset:2px; }
 
 .toggle-thumb{
   position:absolute; top:3px; left:3px;
@@ -357,4 +413,16 @@ form#contactForm{ display:flex; flex-direction:column; gap:22px; }
 .floating-cta:hover{ background:var(--orange); }
 @media (max-width:700px){
   .floating-cta{ bottom:18px; right:18px; left:18px; justify-content:center; padding:14px 20px; }
+}
+
+/* ============ PREFERS-REDUCED-MOTION ============
+   Coupe toutes les animations/transitions CSS pour les visiteurs ayant demande
+   une reduction des animations au niveau systeme (accessibilite vestibulaire). */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

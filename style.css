@@ -129,11 +129,13 @@ nav.links a:hover{ opacity:1; }
 
 .mobile-menu nav{ display:flex; flex-direction:column; width:100%; }
 .mobile-menu nav a{
-  font-family:'Fraunces', serif; font-size:clamp(28px,9vw,40px); font-weight:500;
-  color:var(--ink); text-decoration:none; padding:14px 0;
+  font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500;
+  letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--ink); opacity:0.55; text-decoration:none; padding:18px 0;
   border-bottom:1px solid var(--line);
+  transition:opacity .2s ease;
 }
-.mobile-menu nav a.on{ color:var(--orange); }
+.mobile-menu nav a.on{ opacity:1; border-bottom:1px solid var(--violet); }
 
 .mobile-menu-cta{
   margin-top:32px; align-self:flex-start;
